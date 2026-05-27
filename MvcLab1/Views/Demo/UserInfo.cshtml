@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Информация о пользователе";
+}
+
+<h1>Информация о пользователе</h1>
+
+@if (ViewBag.UserName != "Неизвестный")
+{
+    <div class="user-info">
+        <p><strong>Имя:</strong> @ViewBag.UserName</p>
+        <p><strong>Возраст:</strong> @ViewBag.Age лет</p>
+        <p>
+            <strong>Статус:</strong> 
+            @if (ViewBag.IsAdult)
+            {
+                <span class="text-success">Совершеннолетний</span>
+            }
+            else
+            {
+                <span class="text-warning">Несовершеннолетний</span>
+            }
+        </p>
+        <p><strong>Год рождения:</strong> @ViewData["BirthYear"]</p>
+        <p><strong>Текущий год:</strong> @ViewData["CurrentYear"]</p>
+    </div>
+}
+else
+{
+    <p class="text-danger">Имя пользователя не указано!</p>
+    <p>Попробуйте: <a href="/Demo/UserInfo?name=Иван&age=25">/Demo/UserInfo?name=Иван&age=25</a></p>
+}
+
+<style>
+    .user-info {
+        background-color: #f0f8ff;
+        padding: 20px;
+        border-radius: 5px;
+        margin: 20px 0;
+    }
+    .text-success { color: green; }
+    .text-warning { color: orange; }
+    .text-danger { color: red; }
+</style>

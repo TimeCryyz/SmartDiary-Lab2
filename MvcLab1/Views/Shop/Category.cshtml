@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = $"Категория: {ViewBag.Category}";
+}
+
+<h1>Категория: @ViewBag.Category</h1>
+
+<div style="background-color: #e7f1ff; padding: 15px; border-radius: 5px; margin: 15px 0;">
+    <p><strong>Название категории:</strong> @ViewBag.Category</p>
+</div>
+
+<h3>Товары в категории:</h3>
+<ul style="list-style-type: none; padding-left: 0;">
+    @foreach (var product in ViewBag.Products)
+    {
+        <li style="padding: 10px; margin-bottom: 8px; background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 4px;">
+            @product
+        </li>
+    }
+</ul>
+
+<hr>
+<a href="/store" style="padding: 8px 16px; background-color: #6c757d; color: white; text-decoration: none; border-radius: 5px;">← Назад в магазин</a>

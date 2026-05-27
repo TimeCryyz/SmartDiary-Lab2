@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Магазин";
+}
+
+<h1>@ViewBag.StoreName</h1>
+<p>Добро пожаловать в наш магазин!</p>
+
+<div style="background-color: #f8f9fa; padding: 20px; border-radius: 5px; margin: 20px 0;">
+    <h3>Информация о магазине:</h3>
+    <ul>
+        <li><strong>Название:</strong> @ViewBag.StoreName</li>
+        <li><strong>Количество товаров:</strong> @ViewData["ProductsCount"]</li>
+        <li><strong>Дата:</strong> @DateTime.Now.ToString("dd.MM.yyyy")</li>
+    </ul>
+</div>
+
+<hr>
+
+<h3>Навигация по магазину:</h3>
+<div style="display: flex; gap: 10px; margin: 20px 0;">
+    <a href="/store/category/electronics" style="padding: 10px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px;">Электроника</a>
+    <a href="/store/category/books" style="padding: 10px; background-color: #6c757d; color: white; text-decoration: none; border-radius: 5px;">Книги</a>
+    <a href="/store/product/42/details" style="padding: 10px; background-color: #17a2b8; color: white; text-decoration: none; border-radius: 5px;">Товар #42</a>
+</div>

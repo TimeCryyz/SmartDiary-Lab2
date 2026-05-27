@@ -1,0 +1,72 @@
+﻿@model MvcLab1.Models.Game
+
+@{
+    ViewData["Title"] = "Добавление игры";
+}
+
+<h1>Добавление игры</h1>
+
+<form asp-action="Create">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="mb-3">
+        <label asp-for="Title"></label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Genre"></label>
+        <input asp-for="Genre" class="form-control" />
+        <span asp-validation-for="Genre" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Platform"></label>
+        <select asp-for="Platform" class="form-control">
+            <option value="">Выберите</option>
+            <option value="PC">PC</option>
+            <option value="PS4">PS4</option>
+            <option value="PS5">PS5</option>
+            <option value="Xbox">Xbox</option>
+            <option value="Switch">Switch</option>
+        </select>
+        <span asp-validation-for="Platform" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="ReleaseYear"></label>
+        <input asp-for="ReleaseYear" class="form-control" />
+        <span asp-validation-for="ReleaseYear" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Developer"></label>
+        <input asp-for="Developer" class="form-control" />
+        <span asp-validation-for="Developer" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Rating"></label>
+        <input asp-for="Rating" class="form-control" step="0.1" />
+        <span asp-validation-for="Rating" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Price"></label>
+        <input asp-for="Price" class="form-control" />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Description"></label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+    </div>
+
+    <div class="mb-3">
+        <input asp-for="IsMultiplayer" /> <label asp-for="IsMultiplayer"></label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Сохранить</button>
+    <a asp-action="Index" class="btn btn-secondary">Назад</a>
+</form>

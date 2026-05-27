@@ -1,0 +1,37 @@
+﻿@model MvcLab1.Models.Product
+
+@{
+    ViewData["Title"] = "Детали товара";
+}
+
+<h1>Детали товара</h1>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">ID</dt>
+        <dd class="col-sm-10">@Model.Id</dd>
+
+        <dt class="col-sm-2">Название</dt>
+        <dd class="col-sm-10">@Model.Name</dd>
+
+        <dt class="col-sm-2">Категория</dt>
+        <dd class="col-sm-10">@Model.Category</dd>
+
+        <dt class="col-sm-2">Цена</dt>
+        <dd class="col-sm-10">@Model.Price.ToString("C")</dd>
+
+        <dt class="col-sm-2">Описание</dt>
+        <dd class="col-sm-10">@Model.Description</dd>
+
+        <dt class="col-sm-2">Дата</dt>
+        <dd class="col-sm-10">@Model.CreatedDate.ToShortDateString()</dd>
+
+        <dt class="col-sm-2">В наличии</dt>
+        <dd class="col-sm-10">@(Model.InStock ? "Да" : "Нет")</dd>
+    </dl>
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Изменить</a> |
+    <a asp-action="Index">Назад</a>
+</div>

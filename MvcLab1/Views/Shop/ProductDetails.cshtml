@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = $"Товар #{ViewBag.ProductId}";
+}
+
+<h1>@ViewBag.ProductName</h1>
+
+<div style="margin: 20px 0;">
+    <div style="background-color: white; border: 1px solid #ddd; border-radius: 5px; padding: 20px;">
+        <h3>Основная информация</h3>
+        <p><strong>ID товара:</strong> @ViewBag.ProductId</p>
+        <p><strong>Название:</strong> @ViewBag.ProductName</p>
+        <p><strong>Цена:</strong> <span style="color: #28a745; font-weight: bold;">@((ViewBag.ProductId * 1000).ToString("C"))</span></p>
+    </div>
+</div>
+
+<hr>
+<a href="/store" style="padding: 8px 16px; background-color: #6c757d; color: white; text-decoration: none; border-radius: 5px;">← Назад в магазин</a>

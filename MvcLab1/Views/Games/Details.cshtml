@@ -1,0 +1,37 @@
+﻿@model MvcLab1.Models.Game
+
+@{
+    ViewData["Title"] = "Детали игры";
+}
+
+<h1>Детали игры</h1>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">Название</dt>
+        <dd class="col-sm-10">@Model.Title</dd>
+        <dt class="col-sm-2">Жанр</dt>
+        <dd class="col-sm-10">@Model.Genre</dd>
+        <dt class="col-sm-2">Платформа</dt>
+        <dd class="col-sm-10">@Model.Platform</dd>
+        <dt class="col-sm-2">Год выпуска</dt>
+        <dd class="col-sm-10">@Model.ReleaseYear</dd>
+        <dt class="col-sm-2">Разработчик</dt>
+        <dd class="col-sm-10">@Model.Developer</dd>
+        <dt class="col-sm-2">Рейтинг</dt>
+        <dd class="col-sm-10">@Model.Rating/10 @Model.GetRatingStars()</dd>
+        <dt class="col-sm-2">Цена</dt>
+        <dd class="col-sm-10">@Model.Price.ToString("C")</dd>
+        <dt class="col-sm-2">Описание</dt>
+        <dd class="col-sm-10">@Model.Description</dd>
+        <dt class="col-sm-2">Мультиплеер</dt>
+        <dd class="col-sm-10">@(Model.IsMultiplayer ? "Да" : "Нет")</dd>
+        <dt class="col-sm-2">Возраст игры</dt>
+        <dd class="col-sm-10">@Model.GetAge() лет</dd>
+    </dl>
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Изменить</a> |
+    <a asp-action="Index">Назад</a>
+</div>
